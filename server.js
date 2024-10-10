@@ -8,7 +8,16 @@ const Contact = require('./routes/contactRoute');
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ 
+
+    // origin: 'http://localhost:5173',
+    origin:'https://pet-adoption-client-theta.vercel.app',
+
+    methods: ['GET', 'POST' ,'DELETE'],
+     credentials: true,
+
+    
+ })); 
 
 const port = process.env.PORT || 7778;
 
